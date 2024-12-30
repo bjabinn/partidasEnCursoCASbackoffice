@@ -1,0 +1,5 @@
+<mat-tab-group class="custom-tab-group">
+  <mat-tab *ngFor="let torneo of torneos" [label]="torneo.lugar">
+    <app-tab-content [partidas]="torneo.partidas"></app-tab-content>
+  </mat-tab>
+</mat-tab-group>

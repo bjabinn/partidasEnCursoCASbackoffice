@@ -1,0 +1,36 @@
+.custom-tab-group {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.mat-tab-label {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.mat-tab-label:hover {
+  background-color: #ddd;
+}
+
+.mat-tab-label-active {
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid #009879;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.mat-tab-body {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}

@@ -1,0 +1,15 @@
+<div class="edit-area">
+    <h3>{{ isNew ? 'Añadiendo Partida' : 'Editando Partida' }}</h3>
+    <label> Jugador 1:
+      <input [(ngModel)]="partida.jugador1" />
+    </label>
+    <label> Jugador 2:
+      <input [(ngModel)]="partida.jugador2" />
+    </label>
+    <label> Resultado:
+      <input [(ngModel)]="partida.resultado1" maxlength="1" class="resultado-input" />
+      <input [(ngModel)]="partida.resultado2" maxlength="1" class="resultado-input" />
+    </label>
+    <button class="save-button" (click)="onSave()">Guardar</button>
+    <button class="cancel-button" (click)="onCancel()">Cancelar</button>
+  </div>

@@ -1,0 +1,43 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th></th> <!-- Icono New si tiempo inferior a valor X -->
+      <th>Jugador</th>
+      <th></th>
+      <th></th>
+      <th>Jugador</th>
+      <th class="actions-column"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partida of partidas">
+      <td *ngIf="esNovedad(partida.fechaActualizacion)">Novedad</td>
+      <td>{{ partida.jugador1 }}</td>
+      <td>{{ partida.resultado1 }}</td>
+      <td>{{ partida.resultado2 }}</td>
+      <td>{{ partida.jugador2 }}</td>
+      <td class="actions-column">
+        <button class="edit-button" (click)="editarPartida(partida)">Editar</button>
+        <button class="delete-button" (click)="eliminarPartida(partida)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="add-button" (click)="mostrarFormularioAgregar()">Añadir</button>
+
+<app-partida-form
+  *ngIf="partidaEditando"
+  [partida]="partidaEditando"
+  [isNew]="false"
+  (save)="guardarPartida($event)"
+  (cancel)="cancelarEdicion()"
+></app-partida-form>
+
+<app-partida-form
+  *ngIf="nuevaPartida"
+  [partida]="nuevaPartida"
+  [isNew]="true"
+  (save)="agregarPartida($event)"
+  (cancel)="cancelarEdicion()"
+></app-partida-form>
