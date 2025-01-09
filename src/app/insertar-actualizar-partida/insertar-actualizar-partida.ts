@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { Partida } from '../models/partida.model';
 
 @Component({
-  selector: 'app-partida-form',
+  selector: 'insertar-actualizar-partida',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './partida-form-component.component.html',
-  styleUrls: ['./partida-form-component.component.css']
+  templateUrl: './insertar-actualizar-partida.html',
+  styleUrls: ['./insertar-actualizar-partida.css']
 })
-export class PartidaFormComponent {
-  @Input() partida: Partida | null = null;
+export class InsertarActualizarPartidaForm {
+  @Input() partida: Partida = { id: 0, jugador1: '', jugador2: '', resultado1: 0, resultado2: 0, fechaActualizacion: new Date() };
   @Input() isNew: boolean = false;
   @Output() save = new EventEmitter<Partida>();
   @Output() cancel = new EventEmitter<void>();

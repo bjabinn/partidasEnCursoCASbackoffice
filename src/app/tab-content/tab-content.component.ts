@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Partida } from '../models/partida.model';
 import { environment } from '../../environments/environment';
-import { PartidaFormComponent } from '../partida-form/partida-form-component.component';
+import { InsertarActualizarPartidaForm } from '../insertar-actualizar-partida/insertar-actualizar-partida';
 
 @Component({
   selector: 'app-tab-content',
   standalone: true,
-  imports: [CommonModule, FormsModule, PartidaFormComponent],
+  imports: [CommonModule, FormsModule, InsertarActualizarPartidaForm],
   templateUrl: './tab-content.component.html',
   styleUrls: ['./tab-content.component.css']
 })

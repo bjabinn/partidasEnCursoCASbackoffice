@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PartidaFormComponentComponent } from './partida-form-component.component';
+import { InsertarActualizarPartidaForm } from './insertar-actualizar-partida';
 
 describe('PartidaFormComponentComponent', () => {
-  let component: PartidaFormComponentComponent;
-  let fixture: ComponentFixture<PartidaFormComponentComponent>;
+  let component: InsertarActualizarPartidaForm;
+  let fixture: ComponentFixture<InsertarActualizarPartidaForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PartidaFormComponentComponent]
+      imports: [InsertarActualizarPartidaForm]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PartidaFormComponentComponent);
+    fixture = TestBed.createComponent(InsertarActualizarPartidaForm);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

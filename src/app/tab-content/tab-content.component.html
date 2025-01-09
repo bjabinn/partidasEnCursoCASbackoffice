@@ -1,6 +1,7 @@
 <table class="styled-table">
   <thead>
     <tr>
+      <th></th> <!-- Id de partida en BD-->
       <th></th> <!-- Icono New si tiempo inferior a valor X -->
       <th>Jugador</th>
       <th></th>
@@ -11,6 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let partida of partidas">
+      <td>{{ partida.id }}</td>
       <td *ngIf="esNovedad(partida.fechaActualizacion)">Novedad</td>
       <td>{{ partida.jugador1 }}</td>
       <td>{{ partida.resultado1 }}</td>
@@ -26,18 +28,18 @@
 
 <button class="add-button" (click)="mostrarFormularioAgregar()">Añadir</button>
 
-<app-partida-form
+<insertar-actualizar-partida
   *ngIf="partidaEditando"
   [partida]="partidaEditando"
   [isNew]="false"
   (save)="guardarPartida($event)"
   (cancel)="cancelarEdicion()"
-></app-partida-form>
+></insertar-actualizar-partida>
 
-<app-partida-form
+<insertar-actualizar-partida
   *ngIf="nuevaPartida"
   [partida]="nuevaPartida"
   [isNew]="true"
   (save)="agregarPartida($event)"
   (cancel)="cancelarEdicion()"
-></app-partida-form>
+></insertar-actualizar-partida>
